@@ -3,10 +3,13 @@ import reactLogo from "./assets/react.svg"
 import linguiLogo from "./assets/lingui-logo.svg"
 import viteLogo from "/vite.svg"
 import "./App.css"
-import { Plural, Trans } from "@lingui/macro"
+import { Plural, Trans, t } from "@lingui/macro"
 import { I18nProvider } from "@lingui/react"
 import { i18n } from "@lingui/core"
 import { loadCatalog } from "./i18n"
+import { translation } from './translation.jsx';
+// If this is used app will not render
+// import { translation as translationjs } from './translation.js';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -51,6 +54,9 @@ function App() {
           <Trans>Click on the Vite and React logos to learn more</Trans>
         </p>
       </div>
+      {t`Hello World`}
+      {translation}
+      {/* {translationjs} */}
     </I18nProvider>
   )
 }
